@@ -1,0 +1,18 @@
+.placeholder {
+    height: $ph-height;
+    min-height: 6rem;
+    max-height: 12rem;
+}
+.main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-areas: "A B C";
+    opacity: 1;
+    &__grid-display {
+        grid-area: B;
+        height: calc(#{$full-height} - (#{$ph-height}) * 2);
+        
+    }
+}
+

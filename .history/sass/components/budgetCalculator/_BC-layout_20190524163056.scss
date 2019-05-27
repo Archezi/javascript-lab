@@ -1,0 +1,24 @@
+.budgetCalculatorContent {
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 8.66fr;
+    grid-template-areas: "A B";
+    min-height: $minContentHeight;
+}
+.transactionHistory {
+    grid-area: A;
+}
+.budgetCalculator {
+    grid-area: B;
+}
+.section__title {
+    height: $ph-height;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    span {
+        font-size: $fs-bigger;
+    }
+}

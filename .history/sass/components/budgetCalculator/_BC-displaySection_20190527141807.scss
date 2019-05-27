@@ -1,0 +1,66 @@
+.budgetCalculator {
+    & .funds {
+        font-size: $fs-bigger;
+        padding: 0 0 0.5rem;
+    }
+    & .description {
+        font-size: $fs-default;
+    }
+    .income {
+        &__container{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            grid-area: A;
+            height: $ph-height;
+        }
+        
+        &Funds {
+            grid-area: I;
+            
+        }
+        &__description {
+            grid-area: II;
+            
+        }
+    }
+    .expenses {
+        &__container {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-align: center;
+            grid-area: B;
+        }
+        &Funds {
+            grid-area: I;
+        }
+        &Funds-percentage {
+            font-size: $fs-default;
+            grid-area: F;
+        }
+        &__description {
+            grid-area: II;
+            
+        }
+    }
+    .total {
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-self: end;
+            text-align: center;
+            grid-area: C;
+        }
+        &Funds {
+            grid-area: I;
+            
+        }
+        &__description {
+            grid-area: II;
+            
+        }
+    }
+}
+
+

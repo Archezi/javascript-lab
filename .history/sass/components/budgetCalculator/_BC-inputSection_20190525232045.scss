@@ -1,0 +1,47 @@
+.budgetCalculator {
+    &__input-select {
+        grid-area: A;
+    }
+    &__input-text {
+        grid-area: B;
+    }
+    &__input-value {
+        grid-area: C;
+    }
+    &__add-button {
+        grid-area: D;
+        border: 1px solid $borders;
+        transition: all 0.35s ease-in-out;
+        &:hover {
+            border: 1px solid $bordersHover;
+        }
+    }
+}
+.dropdown-content {
+    background-color: $background;
+}
+.dropdown-content li > a, .dropdown-content li > span {
+
+    font-size: 16px;
+    color: $font-color;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+
+}
+input[type="text"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid $bordersHover;
+    box-shadow: 0 1px 0 0 $bordersHover;
+    
+}
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
+    color: $font-color;
+    font-size: $fs-default;
+
+}
+.input-field > label {
+    // font-size: $fs-bigger;
+}
+label.active {
+    color: $font-color;
+}

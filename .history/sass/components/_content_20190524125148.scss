@@ -1,0 +1,26 @@
+@import "content/cart";
+.placeholder {
+    height: $ph-height;
+    min-height: 6rem;
+    max-height: 12rem;
+}
+.main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-areas: "A B C";
+    opacity: 1;
+    visibility: visible;
+    &__grid-display {
+        padding: 2rem 0;
+        position: relative;
+        grid-area: B;
+        // display: grid;
+        // grid-gap: 2rem;
+        // grid-template-columns: repeat(3, 1fr);
+        // min-height: calc(#{$full-height} - (#{$ph-height}) * 2);
+        
+        
+    }
+}
+

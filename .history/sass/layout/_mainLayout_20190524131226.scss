@@ -1,0 +1,13 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: content-box;
+}
+.content__wrapper {
+    position: relative;
+    min-height: calc(var(--vh, 1vh)*100);
+}
+

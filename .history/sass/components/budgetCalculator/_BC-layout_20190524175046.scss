@@ -1,0 +1,63 @@
+.budgetCalculatorContent {
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 8.66fr;
+    grid-template-areas: "A B";
+    min-height: $minContentHeight;
+    max-height: $minContentHeight;
+}
+.transactionHistory {
+    grid-area: A;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-height: $minContentHeight;
+    grid-template-rows: calc(#{$ph-height} / 2) 1fr 1fr;
+
+    padding: 0 2rem;
+}
+.section__title {
+    height: calc(#{$ph-height} / 2);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    span {
+        font-size: $fs-heading-bigger;
+    }
+}
+.budgetCalculator {
+    grid-area: B;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:calc(#{$ph-height} / 2) $ph-height  1fr;
+    padding: 0 2rem;
+    &__display-panel {
+        height: $ph-height;
+        display: grid;
+        grid-template-areas: "A B C";
+        grid-template-columns: 1fr 1fr 4fr;
+        align-content: center;
+
+    }
+
+    .income {
+        &__container{
+            text-align: center;
+            grid-area: A;
+        }
+    }
+    .expenses {
+        &__container {
+            text-align: center;
+            grid-area: B;
+        }
+    }
+    .total {
+        &__container {
+            text-align: center;
+            grid-area: C;
+        }
+    }
+}
+
+

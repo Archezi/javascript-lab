@@ -1,0 +1,77 @@
+.expensesHistory,
+.incomeHistory  {
+    &__title {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-bottom:  0.5rem;
+        span {
+            font-size: $fs-heading-default;
+            
+        }
+    }
+}
+
+
+.incomeHistory,
+.expensesHistory {
+    
+    .listItem {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        
+        
+        &__description {
+            font-size: $fs-default;
+        }
+        &__rightPanel {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            font-size: $fs-default;
+        }
+        &__value {
+            transition: all 0.3s ease-in-out;
+            font-size: $fs-default;
+            display: flex;
+            span.expPercentage {
+                display: block;
+                padding-left: 0.5rem;
+                font-size: $fs-smaller;
+            }
+        }
+        &__value-income {
+
+        }
+        &__delete {
+            position: absolute;
+            right:0px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        &__delete-button {
+            
+        }
+    }
+}
+.expensesHistory {
+   
+}
+
+
+
+
+
+
+.listItem:hover {
+    
+    .listItem__value {
+        padding-right: 2rem;
+    }
+    .listItem__delete {
+        visibility: visible;
+        opacity: 1;
+    }
+} 

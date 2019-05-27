@@ -1,0 +1,118 @@
+.budgetCalculatorDisplay {
+    // min-height:calc( 100% - #{$ph-height});
+    // max-height: $minContentHeight;
+}
+.budgetCalculatorContent {
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 8.66fr;
+    grid-template-areas: "A B";
+    
+}
+.transactionHistory {
+    grid-area: A;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-height: $minContentHeight;
+    grid-template-rows: calc(#{$ph-height} / 2) 1fr 1fr;
+
+    padding: 0 2rem;
+}
+.section__title {
+    height: calc(#{$ph-height} / 2);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    span {
+        font-size: $fs-heading-bigger;
+    }
+}
+.budgetCalculator {
+    position: relative;
+    grid-area: B;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:calc(#{$ph-height} / 2) $ph-height  1fr;
+    padding: 0 2rem;
+    &__display-panel {
+        height: $ph-height;
+        display: grid;
+        grid-template-areas: "A B C";
+        grid-template-columns: 1fr 1fr 4fr;
+        align-content: center;
+
+
+    }
+    .inner-wrapper {
+        grid-area: A;
+        display: grid;
+        width: 10rem;
+        grid-template-rows: 1fr;
+        grid-template-columns: auto auto;
+        grid-template-areas: 
+        "I"
+        "II";
+    }
+    & .funds {
+        font-size: $fs-bigger;
+        padding: 0 0 0.5rem;
+    }
+    & .description {
+        font-size: $fs-default;
+    }
+    .income {
+        &__container{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            grid-area: A;
+            height: $ph-height;
+        }
+        
+        &__funds {
+            grid-area: I;
+            
+        }
+        &__description {
+            grid-area: II;
+            
+        }
+    }
+    .expenses {
+        &__container {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-align: center;
+            grid-area: B;
+        }
+        &__funds {
+            grid-area: I;
+            
+        }
+        &__description {
+            grid-area: II;
+            
+        }
+    }
+    .total {
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-self: end;
+            text-align: center;
+            grid-area: C;
+        }
+        &__funds {
+            grid-area: I;
+            
+        }
+        &__description {
+            grid-area: II;
+            
+        }
+    }
+}
+
+

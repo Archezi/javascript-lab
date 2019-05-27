@@ -1,0 +1,6 @@
+.budgetCalculatorDisplay {
+    display: grid;
+    position: relative;
+    grid-template-columns: 3fr 7.66fr;
+    grid-template-areas: "A B"
+}

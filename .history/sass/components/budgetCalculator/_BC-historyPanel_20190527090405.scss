@@ -1,0 +1,26 @@
+.incomeHistory {
+
+    &__title {
+        font-size: $fs-heading-default;
+    }
+    .listItem {
+        &__description {
+            font-size: $fs-default;
+        }
+        &__rightPanel {
+
+        }
+        &__value {
+
+        }
+        &__value-income {
+
+        }
+        &__delete {
+
+        }
+        &__delete-button {
+
+        }
+    }
+}

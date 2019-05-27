@@ -1,0 +1,73 @@
+.budgetCalculatorDisplay {
+    
+}
+.budgetCalculatorContent {
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 8.66fr;
+    grid-template-areas: "A B";
+    
+}
+.transactionHistory {
+    grid-area: A;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-height: $minContentHeight;
+    grid-template-rows: calc(#{$ph-height} / 2) 1fr 1fr;
+
+    padding: 0 2rem;
+}
+.section__title {
+    height: calc(#{$ph-height} / 2);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    span {
+        font-size: $fs-heading-bigger;
+    }
+}
+.budgetCalculator {
+    position: relative;
+    grid-area: B;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:calc(#{$ph-height} / 2) $ph-height  1fr;
+    padding: 0 2rem;
+    &__display-panel {
+        height: $ph-height;
+        position: relative;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-areas: "A B C";
+        grid-template-columns: 1fr 1fr 4fr;
+        align-content: center;
+
+
+    }
+    .inner-wrapper {
+        grid-area: A;
+        display: grid;
+        width: 10rem;
+        grid-template-rows: 1fr;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        grid-template-areas: 
+        "I F"
+        "II II";
+    }
+    &__input-panel{
+        display: grid;
+        margin-top: 2rem;
+        grid-template-rows: 7rem 5rem;
+        grid-gap: 2rem;
+        grid-template-columns: 1fr 7.66fr 2fr;
+        grid-template-areas: 
+        "A B C"
+        ". . D";
+    }
+}
+
+
+
+

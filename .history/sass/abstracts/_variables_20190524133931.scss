@@ -1,0 +1,19 @@
+$font-color: #433c29; 
+$background: #fff6ec;
+$borders: #3f38261a;
+
+
+
+
+
+$ph-height: calc(var(--vh, 1vh)*11.11111); //header, footer & placeholder height
+$full-height: calc(var(--vh, 1vh)*100);
+$minContentHeight: calc(#{$full-height} - (#{$ph-height}) * 2);
+$navigation-heigh: calc(var(--vh, 1fr)* 35); // 35vh
+
+// margin for content of the logo and navigation list
+$margin-6rem: 6rem;
+// FONTS
+
+$fs-default: 1.4rem;
+$fs-heading-default: 1.8rem;

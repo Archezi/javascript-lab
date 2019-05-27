@@ -1,0 +1,30 @@
+.b {
+    width: 1px;
+    height: 1px;
+}
+.b-b,
+.b-t,
+.b-l,
+.b-r {
+    position: absolute;
+    background-color: $borders;
+}
+.b-b {
+    bottom: 0;
+    width: 100%;
+}
+.b-t {
+    top: 0;
+    width: 100%;
+}
+.b-r {
+    right: 0;
+    height: 100%;
+}
+.b-l {
+    left: 0;
+    height: 100%;
+}
+.b-ext-r {
+    padding-right: -2rem;
+}

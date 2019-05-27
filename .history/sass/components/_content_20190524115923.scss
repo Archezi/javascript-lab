@@ -1,0 +1,26 @@
+.placeholder {
+    height: $ph-height;
+    min-height: 6rem;
+    max-height: 12rem;
+}
+.main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-areas: "A B C";
+    opacity: 1;
+    visibility: visible;
+    &__grid-display {
+        position: relative;
+        grid-area: B;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: calc(#{$full-height} - (#{$ph-height}) * 2);
+        
+        
+    }
+}
+
+.cart {
+    border: 0.01rem solid $borders;
+}
