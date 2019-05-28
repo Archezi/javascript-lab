@@ -4838,16 +4838,35 @@ ul, li {
   position: relative;
   min-height: calc(var(--vh, 1vh)*100); }
 
+.content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out; }
+
+.contentHidden {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden; }
+
 .noise {
-  z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: .02;
-  z-index: 99999; }
+  opacity: .016;
+  z-index: 50; }
+
+.videoContainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100vh;
+  pointer-events: none;
+  opacity: .1;
+  z-index: 20; }
 
 .header {
   position: fixed;
@@ -4857,11 +4876,14 @@ ul, li {
   grid-template-columns: 1fr 8.66fr 1fr;
   grid-template-areas: "A B C";
   height: calc(var(--vh, 1vh)*11.11111);
-  min-height: 60px;
-  max-height: 120px;
+  min-height: 6rem;
+  max-height: 12rem;
   width: 100vw;
-  z-index: 30;
+  z-index: 60;
   background: #fff6ec; }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      grid-template-columns: 2fr 6.66fr 2fr; } }
   .header .a-link {
     font-size: 1.4rem;
     font-weight: 500;
@@ -4926,15 +4948,49 @@ ul, li {
     grid-area: B;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    min-height: calc(calc(var(--vh, 1vh)*100) - (calc(var(--vh, 1vh)*11.11111)) * 2); }
+    grid-template-columns: repeat(3, 1fr); }
+
+.nav {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: calc(var(--vh, 1fr)* 35);
+  top: calc(calc(var(--vh, 1vh)*11.11111) * 2);
+  left: 0;
+  z-index: 40;
+  transition: opacity 0.5s ease-in-out; }
+  .nav ul {
+    grid-area: B;
+    margin-left: 6rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; }
+  .nav__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-areas: "A B C";
+    height: calc(var(--vh, 1fr)* 35); }
+  .nav li a {
+    font-size: calc(var(--vh, 1vh)*12);
+    opacity: 0.6;
+    line-height: 1.1em;
+    font-weight: 300; }
+
+.navigationShow {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out; }
 
 .budgetCalculatorContent {
+  box-sizing: border-box;
   display: grid;
   position: relative;
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 8.66fr;
-  grid-template-areas: "A B"; }
+  grid-template-areas: "A B";
+  bottom: 0;
+  top: 0; }
   @media only screen and (max-width: 37.5em) {
     .budgetCalculatorContent {
       grid-template-columns: 1fr;
@@ -5147,6 +5203,9 @@ label.active {
   display: grid;
   grid-template-columns: 1fr 8.66fr 1fr;
   grid-template-areas: "A B C"; }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      grid-template-columns: 2fr 6.66fr 2fr; } }
   .footer .a-link {
     font-size: 1.4rem;
     font-weight: 500;

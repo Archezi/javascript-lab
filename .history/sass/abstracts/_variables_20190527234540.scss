@@ -1,0 +1,22 @@
+$font-color: #433c29; 
+$background: rgba(255, 246, 236, 0.5);
+$borders: rgba(63, 56, 38, 0.102);
+$bordersHover: rgba(63, 56, 38, 0.4);
+$bordersDark: rgba(63, 56, 38, 0.4);
+
+
+
+
+$ph-height: calc(var(--vh, 1vh)*11.11111); //header, footer & placeholder height
+$full-height: calc(var(--vh, 1vh)*100);
+$minContentHeight: calc(#{$full-height} - (#{$ph-height}) * 2);
+$navigation-heigh: calc(var(--vh, 1fr)* 35); // 35vh
+$contentMargin: calc(#{$ph-height} * 2);
+// margin for content of the logo and navigation list
+$margin-6rem: 6rem;
+// FONTS
+$fs-smaller: 1.2rem;
+$fs-default: 1.4rem;
+$fs-bigger: 1.6rem;
+$fs-heading-default: 1.8rem;
+$fs-heading-bigger: 2.1rem;

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.typekit.net/fry3bii.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.comp.css">
+    <title>Budget Calculator</title>
+</head>
+<body>
+    <div id="barba-wrapper" class="wrapper">
+        <div class="barba-container container">
+            <canvas id="noise" class="noise"></canvas>
+            <div class="content__wrapper">
+                <div id="mainContent" class="content ">
+                    <!-- <div class="placeholder"></div> -->
+                    <!-- ======================================================================== -->
+                    <div class="budgetCalculatorDisplay">
+                        <section class="budgetCalculatorContent">
+                            
+                            <div class="transactionHistory">
+                                <div class="section__title">
+                                    <span>Transaction History</span>
+                                </div>
+                                <div class=" incomeHistory">
+                                    <div class="incomeHistory__title">
+                                        <span>Income</span>
+                                        <div class="b b-dark b-b"></div>
+                                    </div>
+
+                                    <!-- <div class="listItem" id="inc-0">
+                                        <div class="b b-b"></div>
+                                        <div class="listItem__description">Sold the car </div>
+                                        <div class="listItem__rightPanel">
+                                            <div class="listItem__value listItem__value-income">$2200</div>
+                                            <div class="listItem__delete">
+                                                <i class="tiny material-icons ListItem__delete-button">clear</i>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    
+                                </div>
+                                <div class=" expensesHistory">
+                                    <div class="expensesHistory__title">
+                                        <span>Expenses</span>
+                                        <div class="b b-dark b-b"></div>
+                                    </div>
+                                    <!-- <div class="listItem" id="exp-0">
+                                        <div class="b b-b"></div>
+                                        <div class="listItem__description">Car</div>
+                                        <div class="listItem__rightPanel">
+                                            <div class="listItem__value listItem__value-income">$2200 <br>  <span class="listItem__expPercentage">( 22% )</span></div>
+                                            <div class="listItem__delete">
+                                                <i class="tiny material-icons ListItem__delete-button">clear</i>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="budgetCalculator">
+                                <div class="bb b-l"></div>
+                                <div class="section__title">
+                                    <span>Budget Calculator</span>
+                                </div>
+                                <div class="budgetCalculator__display-panel">
+                                    <div class="b b-b "></div>
+                                    <div class="income__container">
+                                        <div class="income inner-wrapper">
+                                            <div class="incomeFunds funds">$2200</div>
+                                            <div class="income__description description">Total income</div>
+                                        </div>
+                                    </div>
+                                    <div class="expenses__container">
+                                        <div class="expenses inner-wrapper">
+                                            <div class="expensesFunds funds">
+                                                $2200 
+                                            </div>
+                                            <div class="expensesFunds-percentage">(22%)</div>
+                                            <div class="expenses__description description">Total expenses</div>
+                                        </div>
+                                    </div>
+                                    <div class="total__container">
+                                        <div class="total inner-wrapper">
+                                            <div class="totalFunds funds">$2200</div>
+                                            <div class="total__description description">Total funds</div>
+                                        </div>
+                                    </div>
+                                                                    </div>
+                                <div class="budgetCalculator__input-panel">
+                                    <div class="budgetCalculator__input-select">
+                                        <div class="input-field ">
+                                            <select class="inputType">
+                                              <option value="inc">Income</option>
+                                              <option value="exp">Expenses</option>
+                                            </select>
+                                            <label>Select</label>
+                                        </div>
+                                    </div>
+                                    <div class="budgetCalculator__input-text">
+                                        <div class="input-field ">
+                                            <input id="input_text" class="inputDescription" type="text" >
+                                            <label for="input_text">Description</label>
+                                        </div>
+                                    </div>
+                                    <div class="budgetCalculator__input-value">
+                                        <div class="input-field ">
+                                            <input id="input_text" class="inputValue validate" type="number" >
+                                            <label for="input_text">Value</label>
+                                            <span class="helper-text" data-error="wrong" data-success="right">Please enter a valid number</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" role="button" class="budgetCalculator__add-button addBtn">
+                                        <i class="large material-icons">add</i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                   <!-- ========================================================================= -->
+                    <!-- <div class="placeholder"></div> -->
+                </div>
+                
+                
+                
+                <footer class="footer">
+                    <a href="#" class="footer__legal">
+                        <div class="b b-t"></div>
+                        <div class="a-link">Legal</div>
+                    </a>
+                    <div class="footer__center">
+                        <div class="b b-l"></div><div class="b b-t"></div><div class="b b-r"></div>
+                        <div class="footer__center-legal"></div>
+                        <div class="footer__center-social"></div>
+                    </div>
+                    <a href="#" class="footer__social">
+                        <div class="b b-t"></div>
+                        <div class="a-link">Social</div>
+                    </a>
+                </footer>
+            </div>
+            
+
+
+            <header class="header">
+                <a  href="#"
+                    class="header__menu">
+                    <div class="b b-b"></div>
+                    <div class="a-link ">Menu</div>
+                </a>
+                <div class="header__center">
+                    <div class="b b-l"></div><div class="b b-b"></div><div class="b b-r"></div>
+                    <a  href="../../../index.html" 
+                        class="logo-link">
+                    <h1 class="logo-text">Lukasz Kaczmarek</h1></a>
+                </div>
+                <a  href="#" 
+                    class="header__contact">
+                    <div class="b b-b"></div>
+                    <div  class="a-link">Contact</div>
+                </a>
+            </header>
+
+            <div class="navigation">
+                <div id="nav"  class="nav">
+                    <div class="nav__wrapper">
+                        <ul>
+                        <li>
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Projects</a>
+                        </li>
+                        <li>
+                            <a href="" class="nav__link">Skills</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../../js/noiseCanvas.js"></script>
+    <script src="../../js/barba.min.js"></script>
+    <script src="../../js/budgetApp.js"></script>
+    <script src="../../js/myScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    overflow-x: hidden !important;
+    padding-right: 0px; /* exact value is given in JavaScript code */
+}
+.content__wrapper {
+    position: relative;
+    min-height: calc(var(--vh, 1vh)*100);
+}
+// .content {
+//     opacity: 1;
+//     visibility: visible;
+// }
+.contentHidden {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
