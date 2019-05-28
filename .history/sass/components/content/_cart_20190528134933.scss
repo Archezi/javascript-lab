@@ -1,0 +1,10 @@
+.cart {
+    position: relative;
+    border: 0.01rem solid $borders;
+    height: auto;
+
+    &__title {
+        @include absCenter;
+        font-size: $fs-heading-default;
+    }
+}

@@ -11,24 +11,10 @@ let DOMStrings = {
     header: '.header'
 }
 
-window.addEventListener('resize', windowResize);
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-function windowResize() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // 1. Hide scroll bar
-    hideScroll();
-    // 2. set even width and height to cart elements
-    cartWidth();
-}
-windowResize();
-
-
-
-
-
-
-function cartWidth() {
+cartWidth = function() {
     let cart = document.getElementsByClassName('cart');
     for(var i = 0; i < cart.length; i++) {
         let cWidth = cart[i].offsetWidth;
@@ -36,7 +22,7 @@ function cartWidth() {
     }
 }
 
-function hideScroll() {
+hideScroll = function() {
     // HIDING SCROLL BAR 
     var wrapper = document.querySelector(DOMStrings.wrapper);
     wrapper.style.paddingRight = wrapper.offsetWidth - wrapper.clientWidth + 'px';
@@ -71,19 +57,21 @@ document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e)
     }, 200 );
 });
 
-function adjustLayout() {
-    // var wrapper = document.querySelector(DOMStrings.wrapper);
-    // var budgetTransactionHistory = document.querySelector(DOMStrings.BC_leftSite);
-    // var headerMenu = document.querySelector(DOMStrings.headerMenu);
-    var header = document.querySelector(DOMStrings.header);
-    var bcc = document.querySelector(DOMStrings.budgetCalculatorContent);
-    
-    // adjusting max padding for iPad
-    bcc.style.minHeight =  (window.innerHeight - (header.offsetHeight * 2)) + "px";
-    
-    
-}
 
+
+window.addEventListener('resize', () => {
+    
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
+    // 1. Hide scroll bar
+    hideScroll();
+    // 2. set even width and height to cart elements
+    cartWidth();
+    // 3. Min height of the content set for 100% available space on screen - height of the footer and header
+    adjustLayout()
+
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     let options;
@@ -99,7 +87,8 @@ init = function() {
     hideScroll();
     // 2. set even width and height to cart elements
     cartWidth();
-    adjustLayout();
+    // 3. Min height of the content set for 100% available space on screen - height of the footer and header
+    // 4. Initialization of select function from materialized framework
     console.log('Application is running');
 }
 

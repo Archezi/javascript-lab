@@ -4809,7 +4809,7 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: #fff6ec;
+  background-color: #ebebeb;
   line-height: 1.2;
   min-height: calc(var(--vh, 1vh) * 100);
   color: #433c29;
@@ -4841,7 +4841,10 @@ ul, li {
 .content {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease-in-out; }
+  transition: opacity 0.5s ease-in-out;
+  overflow-x: hidden !important;
+  padding-right: 0px;
+  /* exact value is given in JavaScript code */ }
 
 .contentHidden {
   transition: opacity 0.5s ease-in-out;
@@ -4880,7 +4883,7 @@ ul, li {
   max-height: 12rem;
   width: 100vw;
   z-index: 60;
-  background: #fff6ec; }
+  background: #ebebeb; }
   @media only screen and (max-width: 56.25em) {
     .header {
       grid-template-columns: 2fr 6.66fr 2fr; } }
@@ -5124,7 +5127,7 @@ ul, li {
     border: 1px solid rgba(63, 56, 38, 0.4); }
 
 .dropdown-content {
-  background-color: #fff6ec; }
+  background-color: #ebebeb; }
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
@@ -5196,10 +5199,11 @@ label.active {
 .footer {
   position: absolute;
   bottom: 0;
+  left: 0;
   height: calc(var(--vh, 1vh)*11.11111);
   min-height: 6rem;
   max-height: 12rem;
-  width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 8.66fr 1fr;
   grid-template-areas: "A B C"; }

@@ -29,10 +29,3 @@
 //         budgetTransactionHistory.style.maxWidth = headerMenu.clientWidth + "px";
 //     } 
 // }
-
-
-
-// adjusting width of the budget container to perfectly align with width of the menu button right border on tablet size
-    // if (wrapper.offsetWidth < 800 ) {
-    //     budgetTransactionHistory.style.maxWidth = headerMenu.clientWidth + "px";
-    // } 

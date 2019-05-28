@@ -72,9 +72,9 @@ document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e)
 });
 
 function adjustLayout() {
-    // var wrapper = document.querySelector(DOMStrings.wrapper);
-    // var budgetTransactionHistory = document.querySelector(DOMStrings.BC_leftSite);
-    // var headerMenu = document.querySelector(DOMStrings.headerMenu);
+    var wrapper = document.querySelector(DOMStrings.wrapper);
+    var budgetTransactionHistory = document.querySelector(DOMStrings.BC_leftSite);
+    var headerMenu = document.querySelector(DOMStrings.headerMenu);
     var header = document.querySelector(DOMStrings.header);
     var bcc = document.querySelector(DOMStrings.budgetCalculatorContent);
     
