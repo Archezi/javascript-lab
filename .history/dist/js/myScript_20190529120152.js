@@ -31,12 +31,13 @@ function cartWidth() {
         cart[i].style.height = cWidth + "px";
     }
 }
-// function addShadowToElement(e) {
-//     let element = document.querySelector(e);
-//     element.classList.toggle('z-depth-2');
+function addShadowToElement(e) {
+    let element = document.querySelector(e);
+    element.classList.toggle('cart z-depth-2');
 
-// }
+}
 
+addEventListener('mouseover', addShadowToElement(DOMStrings.cart));
 
 function hideScroll() {
     // HIDING SCROLL BAR 

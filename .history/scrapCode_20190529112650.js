@@ -38,14 +38,6 @@
     // } 
 
 
-var CartBox = document.querySelector(DOMStrings.cart);
-CartBox.addEventListener("mouseenter", function(e) {
-    CartBox.classList.add('z-depth-2');
-});
-CartBox.addEventListener("mouseleave", function(e) {
-    CartBox.classList.remove('z-depth-2');
-});
-
 
 
     <!DOCTYPE html>

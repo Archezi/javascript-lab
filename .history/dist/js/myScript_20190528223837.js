@@ -8,8 +8,7 @@ let DOMStrings = {
     headerMenu: '.header__menu',
     wrapper: '.wrapper',
     budgetCalculatorContent: '.budgetCalculatorContent',
-    header: '.header',
-    cart: '.cart'
+    header: '.header'
 }
 
 window.addEventListener('resize', windowResize);
@@ -24,19 +23,18 @@ function windowResize() {
 }
 windowResize();
 
+
+
+
+
+
 function cartWidth() {
     let cart = document.getElementsByClassName('cart');
     for(var i = 0; i < cart.length; i++) {
-        let cWidth = Math.floor(cart[i].offsetWidth);
+        let cWidth = cart[i].offsetWidth;
         cart[i].style.height = cWidth + "px";
     }
 }
-// function addShadowToElement(e) {
-//     let element = document.querySelector(e);
-//     element.classList.toggle('z-depth-2');
-
-// }
-
 
 function hideScroll() {
     // HIDING SCROLL BAR 
@@ -76,7 +74,6 @@ document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e)
 
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     let options;
     var elems = document.querySelectorAll('select');
@@ -90,6 +87,7 @@ init = function() {
     // 1. Hide scroll bar
     hideScroll();
     // 2. set even width and height to cart elements
+    cartWidth();
     
     console.log('Application is running');
 }

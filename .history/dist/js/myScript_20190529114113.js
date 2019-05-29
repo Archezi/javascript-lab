@@ -8,8 +8,7 @@ let DOMStrings = {
     headerMenu: '.header__menu',
     wrapper: '.wrapper',
     budgetCalculatorContent: '.budgetCalculatorContent',
-    header: '.header',
-    cart: '.cart'
+    header: '.header'
 }
 
 window.addEventListener('resize', windowResize);
@@ -24,6 +23,11 @@ function windowResize() {
 }
 windowResize();
 
+
+
+
+
+
 function cartWidth() {
     let cart = document.getElementsByClassName('cart');
     for(var i = 0; i < cart.length; i++) {
@@ -31,12 +35,6 @@ function cartWidth() {
         cart[i].style.height = cWidth + "px";
     }
 }
-// function addShadowToElement(e) {
-//     let element = document.querySelector(e);
-//     element.classList.toggle('z-depth-2');
-
-// }
-
 
 function hideScroll() {
     // HIDING SCROLL BAR 
@@ -72,7 +70,6 @@ document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e)
         }
     }, 200 );
 });
-
 
 
 

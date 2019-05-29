@@ -36,7 +36,13 @@ function cartWidth() {
 //     element.classList.toggle('z-depth-2');
 
 // }
-
+var CartBox = document.querySelector(DOMStrings.cart);
+CartBox.addEventListener("mouseenter", function(e) {
+    CartBox.addClass('z-depth-2');
+});
+CartBox.addEventListener("mouseleave", function(e) {
+    CartBox.removeClass('z-depth-2');
+});
 
 function hideScroll() {
     // HIDING SCROLL BAR 

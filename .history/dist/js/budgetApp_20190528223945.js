@@ -491,7 +491,6 @@ var budgetController = (function(){
       init: function() {
         console.log('Budget App:  started');
         setupEventListeners();
-        UICtrl.adjustLayout();
         UICtrl.displayBudget({
           budget: 0,
           totalInc: 0,

@@ -9,14 +9,12 @@
     display: grid;
     grid-template-columns: 1fr 8.66fr 1fr;
     grid-template-areas: "A B C";
-    
+    transition: color 0.3s ease-in-out;
     @include respond(tab-port) {
         grid-template-columns: 2fr 6.66fr 2fr;
     }
     a:hover {
-        
         .a-link {
-            transition: all 0.3s ease-in-out;
             color: $textHover;
         }
     }

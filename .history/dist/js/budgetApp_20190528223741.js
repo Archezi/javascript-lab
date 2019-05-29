@@ -237,7 +237,7 @@ var budgetController = (function(){
         bcc.style.minHeight =  (window.innerHeight - (header.offsetHeight * 2)) + "px";
         
         
-      },
+    }
       addListItem: function(obj, type) {
   
         var html, newHtml, element;
@@ -491,7 +491,6 @@ var budgetController = (function(){
       init: function() {
         console.log('Budget App:  started');
         setupEventListeners();
-        UICtrl.adjustLayout();
         UICtrl.displayBudget({
           budget: 0,
           totalInc: 0,

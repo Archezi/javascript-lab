@@ -391,7 +391,7 @@ template {
 
 .b {
   width: 1px;
-  height: 1px; }
+  height: 2px; }
 
 .bb {
   width: 2px;
@@ -4829,27 +4829,48 @@ ul, li {
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-width: 100%;
   box-sizing: content-box;
   overflow-x: hidden !important;
   padding-right: 0px;
   /* exact value is given in JavaScript code */ }
 
 .content__wrapper {
+  box-sizing: border-box;
   position: relative;
   min-height: calc(var(--vh, 1vh)*100); }
 
 .content {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease-in-out;
-  overflow-x: hidden !important;
-  padding-right: 0px;
-  /* exact value is given in JavaScript code */ }
+  transition: opacity 0.5s ease-in-out; }
 
 .contentHidden {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
   visibility: hidden; }
+
+.placeholder {
+  height: calc(var(--vh, 1vh)*11.11111);
+  min-height: 6rem;
+  max-height: 12rem; }
+
+.main {
+  display: grid;
+  max-width: 100vw;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 8.66fr 1fr;
+  grid-template-areas: "A B C";
+  opacity: 1;
+  visibility: visible; }
+  .main__grid-display {
+    padding: 2rem 0;
+    position: relative;
+    grid-area: B;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr); }
 
 .noise {
   position: absolute;
@@ -4887,6 +4908,9 @@ ul, li {
   @media only screen and (max-width: 56.25em) {
     .header {
       grid-template-columns: 2fr 6.66fr 2fr; } }
+  .header a:hover .a-link {
+    transition: all 0.3s ease-in-out;
+    color: #DF6C4F; }
   .header .a-link {
     font-size: 1.4rem;
     font-weight: 500;
@@ -4924,34 +4948,21 @@ ul, li {
 
 .cart {
   position: relative;
-  border: 0.01rem solid rgba(63, 56, 38, 0.102); }
+  border: 0.01rem solid rgba(63, 56, 38, 0.102);
+  transition: box-shadow 0.3s ease-in-out; }
+  .cart:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
   .cart__title {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 5%;
+    transform: translateX(-50%);
     font-size: 1.8rem; }
 
-.placeholder {
-  height: calc(var(--vh, 1vh)*11.11111);
-  min-height: 6rem;
-  max-height: 12rem; }
-
-.main {
-  display: grid;
-  max-width: 100vw;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 8.66fr 1fr;
-  grid-template-areas: "A B C";
-  opacity: 1;
-  visibility: visible; }
-  .main__grid-display {
-    padding: 2rem 0;
-    position: relative;
-    grid-area: B;
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr); }
+.budgetCalcCart {
+  background-image: url(../../../dist/pages/budgetCalculator/images/budgetIcon_1@2x.png);
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .nav {
   opacity: 0;
@@ -5210,6 +5221,9 @@ label.active {
   @media only screen and (max-width: 56.25em) {
     .footer {
       grid-template-columns: 2fr 6.66fr 2fr; } }
+  .footer a:hover .a-link {
+    transition: all 0.3s ease-in-out;
+    color: #DF6C4F; }
   .footer .a-link {
     font-size: 1.4rem;
     font-weight: 500;

@@ -1,0 +1,16 @@
+.cart {
+    position: relative;
+    border: 0.01rem solid $borders;
+
+    &__title {
+        @include absCenter;
+        font-size: $fs-heading-default;
+    }
+}
+
+//budget calculator cart
+.budgetCalcCart {
+    background-image: url(../../../dist/pages/budgetCalculator/images/budgetIcon_1@2x.png);
+    background-repeat: no-repeat;
+    
+}
