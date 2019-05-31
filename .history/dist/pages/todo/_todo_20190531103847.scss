@@ -1,0 +1,74 @@
+.todoApp-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "A B C";
+
+}
+.todoApp {
+    &-content {
+
+        grid-area: B;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background: url(../../../dist/pages/todo/images/iphoneFrame.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 25rem;
+    }
+    &-title {
+        position: relative;
+        height: 10rem;
+        width: 100%;
+        font-size: $fs-heading-bigger;
+        display: flex;
+        justify-items: start;
+        align-items: center; 
+        span {
+            padding-left: 6rem;
+        }
+    }
+    
+    
+}
+.todoApp {
+    @include absCenter;
+    min-height: 35rem;    
+    min-width: 20rem;
+    max-height: 35rem;
+    overflow: hidden;
+    .app-header {
+        display: grid;
+        grid-template-columns:1fr;
+        grid-gap: 1rem;
+    }
+    .todo-addBtn {
+        margin-bottom: 0.8rem;
+        border-color: $borders;
+        background: #f1f5f5;
+    }
+    
+}
+ul.todo {
+    margin-top: 2rem;
+    .item-list {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+        font-size: $fs-default;
+        .buttons {
+            display: flex;
+
+        }
+        .remove {
+            color: #E57373;
+            // color: #d8d8d8;
+            cursor: pointer;
+        }
+        .complete {
+            color: #25b99a;
+            cursor: pointer;
+        }
+    }
+}

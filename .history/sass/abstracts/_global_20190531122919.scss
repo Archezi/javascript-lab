@@ -1,0 +1,9 @@
+.showMobile {
+    display: flex;
+}
+.mobile-break {
+    display: none;
+    @include respond(phone) {
+        display: block;
+    }
+}

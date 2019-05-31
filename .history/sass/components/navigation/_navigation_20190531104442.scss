@@ -1,0 +1,42 @@
+.nav {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: $navigation-heigh;
+    top: calc(#{$ph-height } * 2);
+    left: 0;
+    z-index: 40;
+    transition: opacity 0.5s ease-in-out;
+
+    ul {
+        grid-area: B;
+        margin-left: $margin-6rem;
+        display: flex;
+        flex-flow:column wrap;
+        justify-content: center;
+        @include respond(phone) {
+            justify-content: flex-start;
+        }
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 8.66fr 1fr;
+        grid-template-areas: "A B C";
+        height: $navigation-heigh;
+    }
+    li a {
+        font-size: calc(var(--vh, 1vh)*12);
+        opacity: 0.6;
+        line-height: 1.1em;
+        font-weight: 300;
+        @include respond(phone) {
+            font-size: calc(var(--vh, 1vh)*6);
+        }
+    }
+}
+.navigationShow {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out;
+}
