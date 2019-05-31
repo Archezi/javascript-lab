@@ -391,7 +391,7 @@ template {
 
 .b {
   width: 1px;
-  height: 2px; }
+  height: 1px; }
 
 .bb {
   width: 2px;
@@ -408,7 +408,7 @@ template {
   background: rgba(63, 56, 38, 0.4); }
 
 .b-b {
-  bottom: 0;
+  bottom: 0.1rem;
   width: 100%; }
 
 .b-t {
@@ -4871,6 +4871,9 @@ ul, li {
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr); }
+    @media only screen and (max-width: 37.5em) {
+      .main__grid-display {
+        grid-template-columns: 1fr; } }
 
 .noise {
   position: absolute;
@@ -4956,11 +4959,19 @@ ul, li {
     position: absolute;
     left: 50%;
     bottom: 5%;
+    text-align: center;
     transform: translateX(-50%);
     font-size: 1.8rem; }
 
 .budgetCalcCart {
   background-image: url(../../../dist/pages/budgetCalculator/images/budgetIcon_1@2x.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.toDoListCart {
+  background-image: url(../../../dist/pages/todo/images/ToDoIcon@2x.png);
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: center center; }
 
@@ -4996,12 +5007,86 @@ ul, li {
   visibility: visible;
   transition: opacity 0.5s ease-in-out; }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: calc(var(--vh, 1vh)*11.11111);
+  min-height: 6rem;
+  max-height: 12rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8.66fr 1fr;
+  grid-template-areas: "A B C";
+  font-size: 1.4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      grid-template-columns: 2fr 6.66fr 2fr; } }
+  .footer a:hover .a-link {
+    transition: all 0.3s ease-in-out;
+    color: #DF6C4F; }
+  .footer .a-link {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .footer__legal {
+    position: relative;
+    grid-area: A;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; }
+  .footer__center {
+    position: relative;
+    grid-area: B;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between; }
+  .footer__social {
+    position: relative;
+    grid-area: C;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; }
+
+.footer__center-legal,
+.footer__center-social {
+  position: relative;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem; }
+
+.footer__center-legal {
+  justify-content: flex-start; }
+  .footer__center-legal .copyright span,
+  .footer__center-legal .credits span,
+  .footer__center-legal a {
+    font-size: 1.4rem; }
+
+.footer__center-social {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  height: 100%;
+  width: auto; }
+  .footer__center-social a.social-links {
+    font-size: 1.4rem;
+    padding: 0 2rem; }
+
 .budgetCalculatorContent {
   box-sizing: border-box;
   display: grid;
   position: relative;
   grid-template-rows: 1fr;
-  grid-template-columns: 2fr 8.66fr;
+  grid-template-columns: 2fr 7.66fr;
   grid-template-areas: "A B";
   bottom: 0;
   top: 0; }
@@ -5058,14 +5143,16 @@ ul, li {
     grid-template-areas: "I" "II"; }
   .budgetCalculator__input-panel {
     display: grid;
-    margin-top: 2rem;
+    margin-top: 10rem;
     grid-template-rows: 7rem 5rem;
     grid-gap: 2rem;
-    grid-template-columns: 1fr 7.66fr 2fr;
+    grid-template-columns: 2fr 6.66fr 2fr;
     grid-template-areas: "A B C" ". . D"; }
     @media only screen and (max-width: 37.5em) {
       .budgetCalculator__input-panel {
+        margin-top: 2rem;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 7rem 5rem 5rem;
         grid-template-areas: "B B" "A C" ". D"; } }
 
 .budgetCalculator .funds {
@@ -5207,48 +5294,21 @@ label.active {
   visibility: visible;
   opacity: 1; }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: calc(var(--vh, 1vh)*11.11111);
-  min-height: 6rem;
-  max-height: 12rem;
-  width: 100%;
+.todoApp-wrapper {
   display: grid;
   grid-template-columns: 1fr 8.66fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas: "A B C"; }
-  @media only screen and (max-width: 56.25em) {
-    .footer {
-      grid-template-columns: 2fr 6.66fr 2fr; } }
-  .footer a:hover .a-link {
-    transition: all 0.3s ease-in-out;
-    color: #DF6C4F; }
-  .footer .a-link {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-  .footer__legal {
-    position: relative;
-    grid-area: A;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center; }
-  .footer__center {
-    position: relative;
-    grid-area: B;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center; }
-  .footer__social {
-    position: relative;
-    grid-area: C;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center; }
+
+.todoApp-content {
+  grid-area: B;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: url(./images/iphoneFrame.png); }
+
+.todoApp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }

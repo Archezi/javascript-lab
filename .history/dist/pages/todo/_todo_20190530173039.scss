@@ -1,0 +1,23 @@
+.todoApp-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "A B C";
+
+}
+.todoApp-content {
+    grid-area: B;
+    position: relative;
+    height: 100%;
+
+    
+}
+.iphoneFrame {
+    // @include absCenter;
+    transform: scale(0.5);
+}
+.todoApp {
+    @include absCenter;    
+    
+    
+}
