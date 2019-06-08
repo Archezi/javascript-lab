@@ -1,7 +1,5 @@
 .showMobile {
     display: flex;
-    opacity: 1;
-    visibility: visible;
 }
 .mobile-break {
     display: none;
@@ -12,7 +10,4 @@
 .globalVisible {
     opacity: 1;
     visibility: visible;
-}
-.opacityTransition {
-    transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
 }

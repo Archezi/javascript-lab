@@ -68,9 +68,6 @@
     flex-flow: row wrap;
     align-items: center;
     padding: 0 2rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1.5s cubic-bezier(.4,0,.2,1);
     @include respond(phone) {
         display: none;
         
@@ -100,7 +97,6 @@
     bottom: 0;
     height: 100%;
     width: auto;
-    
     a.social-links {
         font-size: $fs-default;
         padding: 0 2rem;
@@ -119,45 +115,39 @@
     }
 }
 
-// manipulation of footer
 
-.footer {
-    @include respond(phone) {
-
-        &.footer__activeLegal-mobile {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: calc(var(--vh, 1vh)*11.11111);
-            min-height: 6rem;
-            max-height: 12rem;
-            width: 100%;
-            display: grid;
-            grid-template-columns:2fr 4.66fr;
-            grid-template-areas: "A B";
-            font-size: $fs-default;
-            transition: all 0.3s ease-in-out;
-            .footer__social {
-                display: none;
-            }
-    
-        }
-        &.footer__activeSocial-mobile {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: calc(var(--vh, 1vh)*11.11111);
-            min-height: 6rem;
-            max-height: 12rem;
-            width: 100%;
-            display: grid;
-            grid-template-columns:6.66fr 2fr;
-            grid-template-areas: "B C";
-            font-size: $fs-default;
-            transition: all 0.3s ease-in-out;
-            .footer__legal {
-                display: none;
-            }
-        }
+.footer.footer__activeSocial-mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh)*11.11111);
+    min-height: 6rem;
+    max-height: 12rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns:6.66fr 2fr;
+    grid-template-areas: "B C";
+    font-size: $fs-default;
+    .footer__legal {
+        display: none;
     }
+}
+.footer {
+    
+    &.footer__activeLegal-mobile {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: calc(var(--vh, 1vh)*11.11111);
+        min-height: 6rem;
+        max-height: 12rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns:2fr 4.66fr;
+        grid-template-areas: "A B";
+        font-size: $fs-default;
+        .footer__social {
+            display: none;
+        }
+}
 }

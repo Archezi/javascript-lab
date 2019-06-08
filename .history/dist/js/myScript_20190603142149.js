@@ -64,12 +64,12 @@ function hideScroll() {
 // Transition functions for animating changing 
 function fadeOut(el) {
     var element = document.querySelector(el);
-    element.style.transition = 'opacity 0.5s cubic-bezier(.4,0,.2,1) 0s';
+    element.style.transition = 'opacity 0.5s linear 0s';
     element.style.opacity = 0;
 }
 function fadeIn(el) {
     var element = document.querySelector(el);
-    element.style.transition = 'opacity 0.5s cubic-bezier(.4,0,.2,1) 0s';
+    element.style.transition = 'opacity 0.5s linear 0s';
     element.style.opacity = 1;
 }
 
@@ -105,47 +105,34 @@ document.querySelector(DOMStrings.footerLegal).addEventListener("click", functio
     } else {
 
         if(centerLegal.classList.contains('globalVisible')) {
-            centerLegal.classList.remove('globalVisible');
-            setTimeout(
-                function() {
-                centerLegal.classList.remove('opacityTransition');
 
-                }, 10
-            );
+            centerLegal.classList.remove('globalVisible');
+            centerLegal.style.transition = 'opacity .5s cubic-bezier(.4,0,.2,1)'
+            setTimeout( 
+                function() {
+
+                    centerLegal.classList.remove('opacityTransition');
+                }, 2200);
         } else {
-            
-            centerLegal.classList.add('opacityTransition');
-            centerLegal.classList.add('globalVisible');
+            centerLegal.classList.add('globalVisible', 'opacityTransition');
         }
+
+        console.log(`window is bigger than 500`);
     }
+
+    
+
 });
 document.querySelector(DOMStrings.footerSocial).addEventListener("click", function(e) {
     e.preventDefault();
     var ele = document.querySelector(DOMStrings.footerID);
     var centerSocial = document.querySelector(DOMStrings.footerCenterSocial);
-    if(windowWidth < 500) {
-        fadeOut(DOMStrings.footerID);
-        setTimeout( function(){
-            ele.classList.toggle('footer__activeSocial-mobile');
-            centerSocial.classList.toggle('showMobile');
-            fadeIn(DOMStrings.footerID);
-        }, 700);
-    } else {
-
-        if(centerSocial.classList.contains('globalVisible')) {
-            centerSocial.classList.remove('globalVisible');
-            setTimeout(
-                function() {
-                    centerSocial.classList.remove('opacityTransition');
-
-                }, 10
-            );
-        } else {
-            
-            centerSocial.classList.add('opacityTransition');
-            centerSocial.classList.add('globalVisible');
-        }
-    }
+    fadeOut(DOMStrings.footerID);
+    setTimeout( function(){
+        centerSocial.classList.toggle('showMobile');
+        ele.classList.toggle('footer__activeSocial-mobile');
+        fadeIn(DOMStrings.footerID);
+    }, 700);
 });
 
 

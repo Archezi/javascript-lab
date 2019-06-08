@@ -68,9 +68,6 @@
     flex-flow: row wrap;
     align-items: center;
     padding: 0 2rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1.5s cubic-bezier(.4,0,.2,1);
     @include respond(phone) {
         display: none;
         
@@ -100,7 +97,6 @@
     bottom: 0;
     height: 100%;
     width: auto;
-    
     a.social-links {
         font-size: $fs-default;
         padding: 0 2rem;

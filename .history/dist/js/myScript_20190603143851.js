@@ -105,47 +105,30 @@ document.querySelector(DOMStrings.footerLegal).addEventListener("click", functio
     } else {
 
         if(centerLegal.classList.contains('globalVisible')) {
+            centerLegal.style.transition = 'opacity .5s cubic-bezier(.4,0,.2,1) 0s';
             centerLegal.classList.remove('globalVisible');
-            setTimeout(
-                function() {
-                centerLegal.classList.remove('opacityTransition');
-
-                }, 10
-            );
-        } else {
             
-            centerLegal.classList.add('opacityTransition');
+        } else {
             centerLegal.classList.add('globalVisible');
+            // centerLegal.style.transition = 'opacity .5s cubic-bezier(.4,0,.2,1)';
         }
+
+        console.log(`window is bigger than 500`);
     }
+
+    
+
 });
 document.querySelector(DOMStrings.footerSocial).addEventListener("click", function(e) {
     e.preventDefault();
     var ele = document.querySelector(DOMStrings.footerID);
     var centerSocial = document.querySelector(DOMStrings.footerCenterSocial);
-    if(windowWidth < 500) {
-        fadeOut(DOMStrings.footerID);
-        setTimeout( function(){
-            ele.classList.toggle('footer__activeSocial-mobile');
-            centerSocial.classList.toggle('showMobile');
-            fadeIn(DOMStrings.footerID);
-        }, 700);
-    } else {
-
-        if(centerSocial.classList.contains('globalVisible')) {
-            centerSocial.classList.remove('globalVisible');
-            setTimeout(
-                function() {
-                    centerSocial.classList.remove('opacityTransition');
-
-                }, 10
-            );
-        } else {
-            
-            centerSocial.classList.add('opacityTransition');
-            centerSocial.classList.add('globalVisible');
-        }
-    }
+    fadeOut(DOMStrings.footerID);
+    setTimeout( function(){
+        centerSocial.classList.toggle('showMobile');
+        ele.classList.toggle('footer__activeSocial-mobile');
+        fadeIn(DOMStrings.footerID);
+    }, 700);
 });
 
 

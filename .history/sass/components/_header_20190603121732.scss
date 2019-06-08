@@ -48,12 +48,9 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        @include respond(phone) {
-
-            .a-link {
-                display: none;
-            }
-        }
+        // .a-link {
+        //     display: none;
+        // }
         
     }
     &__center {

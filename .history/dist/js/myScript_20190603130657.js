@@ -1,8 +1,3 @@
-    var windowHeight = document.documentElement.clientHeight;
-    var windowWidth = document.documentElement.clientWidth;
-
-
-
 
 let DOMStrings = {
     mainContent: '#mainContent',
@@ -17,9 +12,7 @@ let DOMStrings = {
     cart: '.cart',
     footerID: '#footer',
     footerLegal: '.footer__legal',
-    footerSocial: '.footer__social',
-    footerCenterLegal: '.footer__center-legal',
-    footerCenterSocial: '.footer__center-social'
+    footerSocial: '.footer__social'
 }
 
 window.addEventListener('resize', windowResize);
@@ -27,16 +20,10 @@ window.addEventListener('resize', windowResize);
 function windowResize() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-    
-    
     // 1. Hide scroll bar
     hideScroll();
     // 2. set even width and height to cart elements
     cartWidth();
-
-    console.log(`window height = ` + windowHeight);
-    console.log(`window width = ` + windowWidth);
 }
 windowResize();
 
@@ -64,17 +51,16 @@ function hideScroll() {
 // Transition functions for animating changing 
 function fadeOut(el) {
     var element = document.querySelector(el);
-    element.style.transition = 'opacity 0.5s cubic-bezier(.4,0,.2,1) 0s';
+    element.style.transition = 'opacity 0.5s linear 0s';
     element.style.opacity = 0;
 }
 function fadeIn(el) {
     var element = document.querySelector(el);
-    element.style.transition = 'opacity 0.5s cubic-bezier(.4,0,.2,1) 0s';
+    element.style.transition = 'opacity 0.5s linear 0s';
     element.style.opacity = 1;
 }
 
 document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e) {
-    e.preventDefault();
     var el = document.querySelector(DOMStrings.mainContent);
     var nav = document.querySelector(DOMStrings.navigation);
     var menuText = document.querySelector(DOMStrings.menuText);
@@ -89,64 +75,36 @@ document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e)
     }, 200 );
 });
 
+// function footerBar(c, e) {
+//     var ele = document.querySelector(e);
+//     ele.classList.toggle(c);
+//     console.log(ele);
+// }
+
+// document.querySelector(DOMStrings.footerLegal).addEventListener("click", footerBar('footer__activeLegal-mobile', DOMStrings.footerID ));
+// document.querySelector(DOMStrings.footerSocial).addEventListener("click", footerBar('footer__activeSocial-mobile', DOMStrings.footerID ));
 
 document.querySelector(DOMStrings.footerLegal).addEventListener("click", function(e) {
     e.preventDefault();
+    
     var ele = document.querySelector(DOMStrings.footerID);
-    var centerLegal = document.querySelector(DOMStrings.footerCenterLegal);
+    fadeOut(DOMStrings.footerID);
+    setTimeout( function(){
+        ele.classList.toggle('footer__activeLegal-mobile');
+        fadeIn(DOMStrings.footerID);
+    }, 500);
 
-    if(windowWidth < 500) {
-        fadeOut(DOMStrings.footerID);
-        setTimeout( function(){
-            ele.classList.toggle('footer__activeLegal-mobile');
-            centerLegal.classList.toggle('showMobile');
-            fadeIn(DOMStrings.footerID);
-        }, 700);
-    } else {
-
-        if(centerLegal.classList.contains('globalVisible')) {
-            centerLegal.classList.remove('globalVisible');
-            setTimeout(
-                function() {
-                centerLegal.classList.remove('opacityTransition');
-
-                }, 10
-            );
-        } else {
-            
-            centerLegal.classList.add('opacityTransition');
-            centerLegal.classList.add('globalVisible');
-        }
-    }
 });
 document.querySelector(DOMStrings.footerSocial).addEventListener("click", function(e) {
     e.preventDefault();
     var ele = document.querySelector(DOMStrings.footerID);
-    var centerSocial = document.querySelector(DOMStrings.footerCenterSocial);
-    if(windowWidth < 500) {
-        fadeOut(DOMStrings.footerID);
-        setTimeout( function(){
-            ele.classList.toggle('footer__activeSocial-mobile');
-            centerSocial.classList.toggle('showMobile');
-            fadeIn(DOMStrings.footerID);
-        }, 700);
-    } else {
+    ele.classList.toggle('footer__activeSocial-mobile');
 
-        if(centerSocial.classList.contains('globalVisible')) {
-            centerSocial.classList.remove('globalVisible');
-            setTimeout(
-                function() {
-                    centerSocial.classList.remove('opacityTransition');
-
-                }, 10
-            );
-        } else {
-            
-            centerSocial.classList.add('opacityTransition');
-            centerSocial.classList.add('globalVisible');
-        }
-    }
 });
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -156,10 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Materialized Forms are loaded');
 });
 
-
-
-//////////////////////////////////////////////////////////////////
-// INIT FUNCTION
 
 init = function() {
     
