@@ -1,0 +1,57 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-width: 100%;
+    box-sizing: content-box;
+    overflow-x: hidden !important;
+    padding-right: 0px; /* exact value is given in JavaScript code */
+}
+.content__wrapper {
+    box-sizing: border-box;
+    position: relative;
+    min-height: calc(var(--vh, 1vh)*100);
+}
+.content {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out;
+}
+.contentHidden {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.placeholder {
+    height: $ph-height;
+    min-height: 6rem;
+    max-height: 12rem;
+}
+.main {
+    display: grid;
+    max-width: 100vw;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 8.66fr 1fr;
+    grid-template-areas: "A B C";
+    opacity: 1;
+    visibility: visible;
+    
+    &__grid-display {
+        padding: 2rem 0;
+        position: relative;
+        grid-area: B;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        // min-height: calc(#{$full-height} - (#{$ph-height}) * 2);
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+        }
+        
+    }
+}
+.tempHideContent {
+    opacity: 0;
+    visibility: hidden;
+}

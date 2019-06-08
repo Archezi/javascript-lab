@@ -90,11 +90,11 @@ document.querySelector(DOMStrings.menuBtn).addEventListener("click", function(e)
 document.querySelector(DOMStrings.contactBtn).addEventListener("click", function(e) {
     e.preventDefault();
     var el = document.querySelector(DOMStrings.mainContent);
-    var contact = document.querySelector(DOMStrings.contactContainer);
-    var menuText = document.querySelector(DOMStrings.contactText);
+    var contact = document.querySelector(DOMStrings.contactText);
+    var menuText = document.querySelector(DOMStrings.menuText);
     setTimeout( function() {
         el.classList.toggle('contentHidden');
-        contact.classList.toggle('contact-active');
+        nav.classList.toggle('contact-active');
         if (menuText.innerHTML === 'Contact') {
             menuText.innerHTML = 'Close';
         } else {
