@@ -47,7 +47,11 @@ function cartWidth() {
         cart[i].style.height = cWidth + "px";
     }
 }
+// function addShadowToElement(e) {
+//     let element = document.querySelector(e);
+//     element.classList.toggle('z-depth-2');
 
+// }
 
 
 function hideScroll() {
@@ -146,8 +150,7 @@ document.querySelector(DOMStrings.footerSocial).addEventListener("click", functi
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var options;
-    
+    var options, M;
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
     console.log('Materialized Forms are loaded');

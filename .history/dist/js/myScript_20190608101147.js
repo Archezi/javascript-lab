@@ -147,8 +147,8 @@ document.querySelector(DOMStrings.footerSocial).addEventListener("click", functi
 
 document.addEventListener('DOMContentLoaded', function() {
     var options;
-    
-    var elems = document.querySelectorAll('select');
+    var M;
+    var elems = document.querySelector('.inputType');
     var instances = M.FormSelect.init(elems, options);
     console.log('Materialized Forms are loaded');
 });
