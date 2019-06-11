@@ -1,14 +1,7 @@
-///////////////////////////////////////////////
-/**
- * 1. Hide Scroll
- * 2. Set event listener for all buttons 
- * 3. Add window resize for layout elements
- */
+    var windowHeight = document.documentElement.clientHeight;
+    var windowWidth = document.documentElement.clientWidth;
 
 var UIController = (function(){
-
-    var windowWidth = document.documentElement.clientWidth;
-    var windowHeight = document.documentElement.clientHeight;
 
     var DOMStrings = {
         mainContent: '#mainContent',
@@ -35,7 +28,7 @@ var UIController = (function(){
     return {
 
         cartWidth: function(){
-            var cart = document.getElementsByClassName('cart');
+            var cart = document.getElementsByClassName(DOMStrings.cart);
 
             for(var i = 0; i < cart.length; i++) {
                 var cWidth = Math.floor(cart[i].offsetWidth);
@@ -70,73 +63,31 @@ var UIController = (function(){
             var el = document.querySelector(DOMStrings.mainContent);
             var nav = document.querySelector(DOMStrings.navigation);
             var menuText = document.querySelector(DOMStrings.menuText);
-            var contactText = document.querySelector(DOMStrings.contactText);
-            var contact = document.querySelector(DOMStrings.contactContainer);
 
-            if(contact.classList.contains('contact-active')) {
-                setTimeout(function(){
-                    contact.classList.remove('contact-active');
-                    el.classList.toggle('contentHidden');
-                    contactText.innerHTML = 'Close' ? 'Contact' : 'Close';
-                }, 200);
-                setTimeout( function() {
-                    el.classList.toggle('contentHidden');
-                    nav.classList.toggle('navigationShow');
-                    if (menuText.innerHTML === 'Menu') {
-                        menuText.innerHTML = 'Close';
-                    } else {
-                        menuText.innerHTML = 'Menu';
-                    }
-                }, 200 );
-            } else {
-
-                setTimeout( function() {
-                    el.classList.toggle('contentHidden');
-                    nav.classList.toggle('navigationShow');
-                    if (menuText.innerHTML === 'Menu') {
-                        menuText.innerHTML = 'Close';
-                    } else {
-                        menuText.innerHTML = 'Menu';
-                    }
-                }, 200 );
-            }
+            setTimeout( function() {
+                el.classList.toggle('contentHidden');
+                nav.classList.toggle('navigationShow');
+                if (menuText.innerHTML === 'Menu') {
+                    menuText.innerHTML = 'Close';
+                } else {
+                    menuText.innerHTML = 'Menu';
+                }
+            }, 200 );
         },
         contactBtn: function(e) {
             e.preventDefault();
             var el = document.querySelector(DOMStrings.mainContent);
             var contact = document.querySelector(DOMStrings.contactContainer);
-            var menuText = document.querySelector(DOMStrings.menuText);
-            var contactText = document.querySelector(DOMStrings.contactText);
-            var nav = document.querySelector(DOMStrings.navigation);
-
-            if(nav.classList.contains('navigationShow')) {
-                setTimeout(function(){
-                    nav.classList.remove('navigationShow');
-                    el.classList.toggle('contentHidden');
-                    menuText.innerHTML = 'Close' ? 'Menu' : 'Close';
-                    
-                },200);
-                setTimeout( function() {
-                    el.classList.toggle('contentHidden');
-                    contact.classList.toggle('contact-active');
-                    if (contactText.innerHTML === 'Contact') {
-                        contactText.innerHTML = 'Close';
-                    } else {
-                        contactText.innerHTML = 'Contact';
-                    }
-                }, 200 );
-            } else {
-
-                setTimeout( function() {
-                    el.classList.toggle('contentHidden');
-                    contact.classList.toggle('contact-active');
-                    if (contactText.innerHTML === 'Contact') {
-                        contactText.innerHTML = 'Close';
-                    } else {
-                        contactText.innerHTML = 'Contact';
-                    }
-                }, 200 );
-            }
+            var menuText = document.querySelector(DOMStrings.contactText);
+            setTimeout( function() {
+                el.classList.toggle('contentHidden');
+                contact.classList.toggle('contact-active');
+                if (menuText.innerHTML === 'Contact') {
+                    menuText.innerHTML = 'Close';
+                } else {
+                    menuText.innerHTML = 'Contact';
+                }
+            }, 200 );
 
         },
         footerLegalBtn: function(e) {
@@ -145,11 +96,11 @@ var UIController = (function(){
             var centerLegal = document.querySelector(DOMStrings.footerCenterLegal);
 
             if(windowWidth < 500) {
-                UIController.fadeOut(DOMStrings.footerID);
+                fadeOut(DOMStrings.footerID);
                 setTimeout( function(){
                     ele.classList.toggle('footer__activeLegal-mobile');
                     centerLegal.classList.toggle('showMobile');
-                    UIController.fadeIn(DOMStrings.footerID);
+                    fadeIn(DOMStrings.footerID);
                 }, 700);
             } else {
                 if(centerLegal.classList.contains('globalVisible')) {
@@ -166,16 +117,15 @@ var UIController = (function(){
             }
         },
         footerSocialBtn: function(e) {
-
             e.preventDefault();
             var ele = document.querySelector(DOMStrings.footerID);
             var centerSocial = document.querySelector(DOMStrings.footerCenterSocial);
             if(windowWidth < 500) {
-                UIController.fadeOut(DOMStrings.footerID);
+                fadeOut(DOMStrings.footerID);
                 setTimeout( function(){
                     ele.classList.toggle('footer__activeSocial-mobile');
                     centerSocial.classList.toggle('showMobile');
-                    UIController.fadeIn(DOMStrings.footerID);
+                    fadeIn(DOMStrings.footerID);
                 }, 700);
             } else {
 
@@ -226,10 +176,9 @@ var controller = (function(UICtrl) {
         ///////////////////////////////////////////////////
         // Click events 
         // 1. Navigation
-        
         document.querySelector(DOM.menuBtn).addEventListener("click", UICtrl.navigationBtn );
         // 2.Contacts
-        document.querySelector(DOM.contactBtn).addEventListener("click", UICtrl.contactBtn);
+        document.querySelector(DOM.contactBtn).addEventListener("click", UICtrl.menuBtn);
         // 3. Footer legal button
         document.querySelector(DOM.footerLegal).addEventListener("click", UICtrl.footerLegalBtn);
         // 4. Footer social button
@@ -250,8 +199,8 @@ var controller = (function(UICtrl) {
             console.log('Javascript Lab Website: Started');
             setupEventListeners();
             window.onload = function() {
-                UICtrl.cartWidth();
-                UICtrl.hideScroll();
+                UICtrl.cartWidth;
+                UICtrl.hideScroll;
                 document.addEventListener('DOMContentLoaded', function() {
                     var options;
                     var elems = document.querySelectorAll('select');
@@ -263,7 +212,34 @@ var controller = (function(UICtrl) {
         }
     }
 
-    // UICtrl.windowResize();
+    UICtrl.windowResize();
 })(UIController);
 
  controller.init();
+
+ 
+ 
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////
+// INIT FUNCTION
+
+// init = function() {
+    
+//     // 1. Hide scroll bar
+//     hideScroll();
+//     // 2. set even width and height to cart elements
+    
+//     console.log('Application is running');
+// }
+
+// window.onload = function() {
+//     init();
+// }
+
+
+

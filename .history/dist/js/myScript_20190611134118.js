@@ -145,6 +145,7 @@ var UIController = (function(){
             var centerLegal = document.querySelector(DOMStrings.footerCenterLegal);
 
             if(windowWidth < 500) {
+                console.log('footer small device')
                 UIController.fadeOut(DOMStrings.footerID);
                 setTimeout( function(){
                     ele.classList.toggle('footer__activeLegal-mobile');
@@ -171,6 +172,7 @@ var UIController = (function(){
             var ele = document.querySelector(DOMStrings.footerID);
             var centerSocial = document.querySelector(DOMStrings.footerCenterSocial);
             if(windowWidth < 500) {
+                console.log('footer small device')
                 UIController.fadeOut(DOMStrings.footerID);
                 setTimeout( function(){
                     ele.classList.toggle('footer__activeSocial-mobile');

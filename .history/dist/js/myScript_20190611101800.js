@@ -1,14 +1,7 @@
-///////////////////////////////////////////////
-/**
- * 1. Hide Scroll
- * 2. Set event listener for all buttons 
- * 3. Add window resize for layout elements
- */
+    var windowHeight = document.documentElement.clientHeight;
+    var windowWidth = document.documentElement.clientWidth;
 
 var UIController = (function(){
-
-    var windowWidth = document.documentElement.clientWidth;
-    var windowHeight = document.documentElement.clientHeight;
 
     var DOMStrings = {
         mainContent: '#mainContent',
@@ -145,11 +138,11 @@ var UIController = (function(){
             var centerLegal = document.querySelector(DOMStrings.footerCenterLegal);
 
             if(windowWidth < 500) {
-                UIController.fadeOut(DOMStrings.footerID);
+                fadeOut(DOMStrings.footerID);
                 setTimeout( function(){
                     ele.classList.toggle('footer__activeLegal-mobile');
                     centerLegal.classList.toggle('showMobile');
-                    UIController.fadeIn(DOMStrings.footerID);
+                    fadeIn(DOMStrings.footerID);
                 }, 700);
             } else {
                 if(centerLegal.classList.contains('globalVisible')) {
@@ -166,16 +159,15 @@ var UIController = (function(){
             }
         },
         footerSocialBtn: function(e) {
-
             e.preventDefault();
             var ele = document.querySelector(DOMStrings.footerID);
             var centerSocial = document.querySelector(DOMStrings.footerCenterSocial);
             if(windowWidth < 500) {
-                UIController.fadeOut(DOMStrings.footerID);
+                fadeOut(DOMStrings.footerID);
                 setTimeout( function(){
                     ele.classList.toggle('footer__activeSocial-mobile');
                     centerSocial.classList.toggle('showMobile');
-                    UIController.fadeIn(DOMStrings.footerID);
+                    fadeIn(DOMStrings.footerID);
                 }, 700);
             } else {
 
